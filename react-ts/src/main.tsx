@@ -1,14 +1,15 @@
-import { createRoot } from 'react-dom/client';
-import App from './App';
 import './index.css';
-import { BrowserRouter as Router } from 'react-router-dom';
+import {createBrowserRouter} from 'react-router-dom';
+import ReactDOM from "react-dom/client";
+import {RouterProvider} from "react-router";
+import React from 'react';
+import routes from "./routes.tsx"
 
-const rootElement = document.getElementById('root');
-const root = createRoot(rootElement);
-
-root.render(
-  <Router>
-    <App />
-  </Router>
+const router = createBrowserRouter(routes);
+// @ts-ignore
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+        <RouterProvider router={router} />
+        <footer>Mon footer ©2023</footer>
+    </React.StrictMode>
 );
-
