@@ -1,21 +1,22 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // pages
-import Layout from '../Pages/Layout'
+import Header from '../Layout/Header'
 
 function App() {
-
   return (
-    <div className="App">
-      <Routes>
-      <Route path={'/Home/'} element={<Layout />} />
-        <Route path={'*'} element={<>Erreur 404</>} />
-      </Routes>
-    </div>
-  )
+    <>
+    <Header/>
+    </>
+  );
 }
 
 export default App;
+
+
+
+
+
+
 
