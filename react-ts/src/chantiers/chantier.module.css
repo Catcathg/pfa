@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap");
+::placeholder {
+  color: lightgray;
+  font-weight: 400;
+  font-family: Outfit, sans-serif;
+  opacity: 1; /* Firefox */
+}
+
+.signUpBlock {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  align-items: center;
+}
+
+.signUpBlock {
+  justify-content: space-between;
+  height: 50rem;
+  margin-top: 2rem;
+}
+
+.main {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+  font-family: Outfit, sans-serif;
+  box-sizing: border-box;
+}
+
+.buttonsGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30%;
+  width: 60%;
+  align-self: center;
+}
+
+.bienvenue {
+  color: #111111;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  border: 0px solid #000000;
+  width: 150px;
+}
+
+.searchBar {
+  display: flex;
+  position: relative;
+}
+.searchBar input {
+  background-color: #005EB8;
+  height: 50px;
+  border-radius: 50px;
+  width: 100%;
+  color: white;
+}
+.searchBar svg {
+  align-self: center;
+  right: 5px;
+  position: absolute;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 5px 5px lightgray;
+  height: 20vh;
+  width: 100%;
+  border: 0.5px solid;
+  border-radius: 10px;
+  font-family: Outfit, sans-serif;
+  box-sizing: border-box;
+}
+
+.firstCardSection {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.firstCardSection .titleAddressSection {
+  display: flex;
+  flex-direction: column;
+}
+.firstCardSection .titleAddressSection .titleSection {
+  font-weight: 600;
+  font-size: 1.35rem;
+}
+
+.secondCardSection {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.thirdCardSection {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+/*# sourceMappingURL=chantier.module.css.map */

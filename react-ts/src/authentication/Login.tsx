@@ -1,6 +1,7 @@
 import {getRedirectResult, GoogleAuthProvider, signInWithRedirect} from 'firebase/auth';
 import { useEffect, useState } from 'react';
 import {auth} from "./firebase-auth-initialize.ts"
+import {redirect} from "react-router-dom";
 const provider = new GoogleAuthProvider();
 const Login = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -18,6 +19,7 @@ const Login = () => {
                     const user = response.user;
                     console.log('User signed in:', user);
                     // Your additional code here
+                    redirect("http://localhost:5173/sign-in");
                 }
             })
             .catch((error) => {

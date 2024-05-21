@@ -1,0 +1,45 @@
+$primaryColorDark: #008955;
+
+%blockCommon {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  align-items: center;
+}
+
+.signUpBlock {
+  @extend %blockCommon;
+  justify-content: space-between;
+  height: 50rem;
+  margin-top: 2rem;
+}
+
+
+@mixin commonTextWelcomePage($textColor, $fontSize, $fontWeight, $lineHeight) {
+  color: $textColor;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+}
+
+.main {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logoGoogle {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 10px;
+}
+
+.buttonsGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30%;
+  width: 60%;
+  align-self: center;
+}
