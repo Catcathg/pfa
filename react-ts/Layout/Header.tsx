@@ -11,10 +11,10 @@ function Header() {
         <>
             <div className="container">
                 <div className="nav">
-                    <img src={PlacoLogo} alt="Placo Logo" />
+                    <img className="logo" src={PlacoLogo} alt="Placo Logo" />
                     <div className="icon">
-                        <img src={Notification} alt="Notification icon" />
-                        <img src={Profile} alt="profile icon" />
+                        <img className="notif" src={Notification} alt="Notification icon" />
+                        <img className="profile" src={Profile} alt="profile icon" />
                     </div>
                 </div>
             </div>

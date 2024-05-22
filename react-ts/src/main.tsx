@@ -9,6 +9,5 @@ const router = createBrowserRouter(routes);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-    <footer>Mon footer ©2023</footer>
   </React.StrictMode>
 );

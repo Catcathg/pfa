@@ -1,0 +1,20 @@
+.etage_categorie {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 30px 0px 0px 28px;
+}
+
+.info_etage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info_etage2 {
+    display: flex;
+    justify-content: center;
+    
+}
