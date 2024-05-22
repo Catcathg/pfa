@@ -1,6 +1,7 @@
 import React from 'react'
 import './Recap.css'
 import Map from '../Components/Map'
+import {Link} from "react-router-dom";
 
 function Recap() {
     return (
@@ -18,10 +19,12 @@ function Recap() {
         </div>
             <div className="address">Adresse : 96 Rue Didot, 75014 Paris</div>
             <div className="map"><Map /></div>
-            <div className="button">
-                <p className="button_info">Ajouter à ma liste</p>
-                <a href="#"></a>
-            </div>
+            <Link to={"/etage"}>
+                <div className="button">
+                    <p className="button_info">Ajouter à ma liste</p>
+                    <a href="#"></a>
+                </div>
+            </Link>
         </>
     )
 }
