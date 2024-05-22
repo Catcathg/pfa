@@ -1,5 +1,5 @@
 import styles from './chantier.module.css'
-import {useEffect, useRef} from "react";
+import {useEffect, useState} from "react";
 import {Button} from "@mui/material";
 import InfoLogo from "../assets/info-logo-i.png"
 
@@ -18,8 +18,8 @@ export default function ChantierCard() {
     }
 
     // A Chantier instance is saved in a ref because it doesn't change on page re-render
-    const chantierRef = useRef<Chantier | null>(null);
-    const adressChantierRef = useRef("");
+    const [chantier, setChantier] = useState<Chantier | null>(null);
+    const [adressChantier, setadressChantier] = useState("");
 
     // Fetch info of a chantier based on the Google document ID of the chantier.
     // The setup code will run only once when the component is mounted. It will also run when the dependencies change
@@ -48,33 +48,32 @@ export default function ChantierCard() {
                         },
                     },
                 );
-                chantierRef.current = {...objResult};
-                if (chantierRef.current != null) {
-                    adressChantierRef.current = `${chantierRef.current.numVoie} ${chantierRef.current.nameVoie}, ${chantierRef.current.postalCode} ${chantierRef.current.chantierCountry }`
+                setChantier( {...objResult});
+                if (chantier != null) {
+                    setadressChantier(`${chantier.numVoie} ${chantier.nameVoie}, ${chantier.postalCode} ${chantier.chantierCountry }`);
                 }
 
-                console.log(chantierRef.current);
             })
             .catch((error) => console.error(error));
-    });
+    }, []);
 
     return <>
         <div className={styles.card}>
             <div className={styles.firstCardSection}>
                 <div className={styles.titleAddressSection}>
-                    <div className={styles.titleSection}>{chantierRef.current != null ? chantierRef.current.chantierName : "Vide"}</div>
-                    <div className={styles.addressSection}>Adresse: {adressChantierRef.current != null ? adressChantierRef.current : "Vide"}</div>
+                    <div className={styles.titleSection}>{chantier != null ? chantier.chantierName : "Vide"}</div>
+                    <div className={styles.addressSection}>Adresse: {adressChantier != null ? adressChantier : "Vide"}</div>
                 </div>
                 <div>
                     <img src={InfoLogo} alt={"logo-info"} />
                 </div>
             </div>
             <div className={styles.secondCardSection}>
-            <div className={styles.date}>Date de début: {chantierRef.current != null ? chantierRef.current.dateDebut : "Vide"}</div>
-            <div className={styles.date}>Date de fin: {chantierRef.current != null ? chantierRef.current.dateFin : "Vide"}</div>
+            <div className={styles.date}>Date de début: {chantier != null ? chantier.dateDebut : "Vide"}</div>
+            <div className={styles.date}>Date de fin: {chantier != null ? chantier.dateFin : "Vide"}</div>
             </div>
             <div className={styles.thirdCardSection}>
-                <Button variant="contained">{chantierRef.current != null ? chantierRef.current.chantierStatus : "Statut unknown"}</Button>
+                <Button variant="contained" color="success">{chantier != null ? chantier.chantierStatus : "Statut unknown"}</Button>
             </div>
         </div>
     </>
