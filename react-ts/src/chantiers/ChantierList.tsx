@@ -29,7 +29,7 @@ export default function ChantierList() {
                 </div>
             </div>
             <div className={styles.moreOrAdd}>
-                <Link to={"/card"}>
+                <Link to={"/recap"}>
                     <img src={AddButton} alt={"add-button"} />
                 </Link>
             </div>
