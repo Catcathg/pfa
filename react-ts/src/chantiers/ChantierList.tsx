@@ -1,8 +1,7 @@
 import styles from './chantier.module.css'
-import {Button} from "@mui/material";
-import {Link} from "react-router-dom";
 import ChantierCard from "./ChantierCard.tsx";
-
+import AddButton from "../assets/add-button.png"
+import {Link} from "react-router-dom";
 export default function ChantierList() {
     return <>
         <div className={styles.main}>
@@ -30,7 +29,9 @@ export default function ChantierList() {
                 </div>
             </div>
             <div className={styles.moreOrAdd}>
-
+                <Link to={"/card"}>
+                    <img src={AddButton} alt={"add-button"} />
+                </Link>
             </div>
         </div>
     </>

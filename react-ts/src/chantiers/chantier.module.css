@@ -115,4 +115,9 @@
   margin-bottom: 20px;
 }
 
+.moreOrAdd {
+  display: flex;
+  justify-content: end;
+}
+
 /*# sourceMappingURL=chantier.module.css.map */
