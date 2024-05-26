@@ -120,4 +120,46 @@
   justify-content: end;
 }
 
+.mainAddNewChantier {
+  height: 91vh;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  font-family: Outfit, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.mainAddNewChantier label {
+  color: #005EB8;
+}
+
+.titleNewChantier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.titleNewChantier .titleNewChantier1 {
+  font-weight: 600;
+  font-size: 2rem;
+}
+.titleNewChantier .titleNewChantier2 {
+  font-size: 1.1rem;
+}
+
+.parentIcons {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.parentIcons .icon1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.parentIcons .icon2 {
+  position: absolute;
+  left: 4px;
+}
+
 /*# sourceMappingURL=chantier.module.css.map */

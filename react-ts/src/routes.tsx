@@ -22,7 +22,7 @@ export default [
             {path: "menu", element: <App/>},
             {path: "sign-in", element: <SignIn/>},
             {path: "home", element: <ChantierList/>},
-            {path: "chantier", element: <AddNewChantier/>},
+            {path: "nouveau-chantier", element: <AddNewChantier/>},
         ]
     },
     {path: "outils", element: <Outils/>},
