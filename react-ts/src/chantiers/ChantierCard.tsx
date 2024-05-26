@@ -19,7 +19,7 @@ export default function ChantierCard() {
 
     // A Chantier instance is saved in a ref because it doesn't change on page re-render
     const [chantier, setChantier] = useState<Chantier | null>(null);
-    const [adressChantier, setadressChantier] = useState("");
+    const [adressChantier, setAdressChantier] = useState("");
 
     // Fetch info of a chantier based on the Google document ID of the chantier.
     // The setup code will run only once when the component is mounted. It will also run when the dependencies change
@@ -31,7 +31,7 @@ export default function ChantierCard() {
             redirect: "follow"
         };
 
-        fetch("https://firestore.googleapis.com/v1/projects/pfa-groupe8/databases/(default)/documents/chantieres/musee-du-louvre", requestOptions)
+        fetch("https://firestore.googleapis.com/v1/projects/pfa-groupe8/databases/(default)/documents/chantiers/musee-du-louvre", requestOptions)
             .then((response) => response.json())
             .then((result) => {
                 const objResult = new Proxy(
@@ -48,9 +48,11 @@ export default function ChantierCard() {
                         },
                     },
                 );
-                setChantier( {...objResult});
+
+                const resultChantier = {...objResult}
+                setChantier(resultChantier);
                 if (chantier != null) {
-                    setadressChantier(`${chantier.numVoie} ${chantier.nameVoie}, ${chantier.postalCode} ${chantier.chantierCountry }`);
+                    setAdressChantier(`${resultChantier.numVoie} ${resultChantier.nameVoie}, ${resultChantier.postalCode} ${resultChantier.chantierCountry }`);
                 }
 
             })
