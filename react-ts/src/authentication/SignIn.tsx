@@ -27,10 +27,13 @@ export default function SignIn() {
 
     useEffect(() => {
         getRedirectResult(auth)
-            .then((result) => {
+            .then(async (result) => {
                 if (result) {
                     // The signed-in user info.
                     const user = result.user;
+                    if (!await checkUserExists(user.uid)) {
+                        addNewUserToDB(user);
+                    }
                     console.log(user);
                     // IdP data available using getAdditionalUserInfo(result)
                 }
@@ -40,6 +43,59 @@ export default function SignIn() {
             console.error("Error signing in", error);
         });
     }, []);
+
+    async function checkUserExists(userID: string) {
+        const requestOptions = {
+            method: "GET",
+            redirect: "follow"
+        };
+        let resultExist = false;
+
+        await fetch("https://firestore.googleapis.com/v1/projects/pfa-groupe8/databases/(default)/documents/users/" + userID, requestOptions)
+            .then((response) => response.json())
+            .then((result) => {
+                if (result.name != null) {
+                    resultExist = true;
+                }
+            })
+            .catch((error) => {
+                console.error(error)
+            });
+        return resultExist;
+    }
+
+    function addNewUserToDB({uid, displayName}) {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+            "fields": {
+                "userID": {
+                    "stringValue": uid
+                },
+                "displayName": {
+                    "stringValue": displayName
+                },
+                "chantierList": {
+                    "arrayValue": {
+                        "values": []
+                    }
+                }
+            }
+        });
+
+        const requestOptions = {
+            method: "PATCH",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow"
+        };
+
+        fetch("https://firestore.googleapis.com/v1/projects/pfa-groupe8/databases/(default)/documents/users/" + uid, requestOptions)
+            .then((response) => response.json())
+            .then((result) => console.log(result))
+            .catch((error) => console.error(error));
+    }
 
     return <>
         <div className={styles.main}>
