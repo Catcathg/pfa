@@ -51,9 +51,8 @@ export default function ChantierCard() {
 
                 const resultChantier = {...objResult}
                 setChantier(resultChantier);
-                if (chantier != null) {
-                    setAdressChantier(`${resultChantier.numVoie} ${resultChantier.nameVoie}, ${resultChantier.postalCode} ${resultChantier.chantierCountry }`);
-                }
+                setAdressChantier(`${resultChantier.numVoie} ${resultChantier.nameVoie}, ${resultChantier.postalCode} ${resultChantier.chantierCountry}`);
+
 
             })
             .catch((error) => console.error(error));
@@ -64,18 +63,21 @@ export default function ChantierCard() {
             <div className={styles.firstCardSection}>
                 <div className={styles.titleAddressSection}>
                     <div className={styles.titleSection}>{chantier != null ? chantier.chantierName : "Vide"}</div>
-                    <div className={styles.addressSection}>Adresse: {adressChantier != null ? adressChantier : "Vide"}</div>
+                    <div
+                        className={styles.addressSection}>Adresse: {adressChantier != null ? adressChantier : "Vide"}</div>
                 </div>
                 <div>
-                    <img src={InfoLogo} alt={"logo-info"} />
+                    <img src={InfoLogo} alt={"logo-info"}/>
                 </div>
             </div>
             <div className={styles.secondCardSection}>
-            <div className={styles.date}>Date de début: {chantier != null ? chantier.dateDebut : "Vide"}</div>
-            <div className={styles.date}>Date de fin: {chantier != null ? chantier.dateFin : "Vide"}</div>
+                <div className={styles.date}>Date de début de diagnostic: {chantier != null ? chantier.dateDebut : "Vide"}</div>
+                <div className={styles.date}>Date de l'offre: {chantier != null ? chantier.dateFin : "Vide"}</div>
+                {/*<div className={styles.date}>Date de fin de démontage: {chantier != null ? chantier.dateFin : "Vide"}</div>*/}
             </div>
             <div className={styles.thirdCardSection}>
-                <Button variant="contained" color="success">{chantier != null ? chantier.chantierStatus : "Statut unknown"}</Button>
+                <Button variant="contained"
+                        color="success">{chantier != null ? chantier.chantierStatus : "Statut unknown"}</Button>
             </div>
         </div>
     </>

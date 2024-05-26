@@ -87,7 +87,6 @@ $primaryBlueMarine: #005EB8;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0px 5px 5px lightgray;
-  height: 20vh;
   width: 100%;
   border: 0.5px solid;
   border-radius: 10px;
@@ -116,6 +115,7 @@ $primaryBlueMarine: #005EB8;
 .secondCardSection {
   margin-right: 10px;
   margin-left: 10px;
+  margin-bottom: 5px
 }
 
 .thirdCardSection {
@@ -135,8 +135,9 @@ $primaryBlueMarine: #005EB8;
 }
 
 .moreOrAdd {
-  display: flex;
-  justify-content: end;
+  position: fixed;
+  bottom: 0;
+  right: 2rem;
 }
 
 //Add new chantier page

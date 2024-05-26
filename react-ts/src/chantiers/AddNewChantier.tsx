@@ -54,10 +54,6 @@ export default function AddNewChantier() {
             label: 'Enseignement',
         },
         {
-            value: 'Hôtel',
-            label: 'Hôtel',
-        },
-        {
             value: 'Culturel',
             label: 'Culturel',
         },
@@ -99,8 +95,7 @@ export default function AddNewChantier() {
             </div>
         </div>
         <div className={styles.formulaireNewChantier}>
-            <form onSubmit={e => e.preventDefault()}>
-                <FormControl variant={"standard"}>
+                <FormControl variant={"standard"} fullWidth={true}>
                     <label htmlFor="chantierName">Nom du chantier</label>
                     <OutlinedInput
                         id="chantierName"
@@ -110,6 +105,8 @@ export default function AddNewChantier() {
                         </InputAdornment>}
                         label="chantierName"
                     />
+                </FormControl>
+                <FormControl variant={"standard"} fullWidth={true}>
                     <label htmlFor="typeBatiment">Type de bâtiment</label>
                     <TextField
                         id="outlined-select-currency"
@@ -128,6 +125,8 @@ export default function AddNewChantier() {
                             </MenuItem>
                         ))}
                     </TextField>
+                </FormControl>
+                <FormControl variant={"standard"} fullWidth={true}>
                     <label htmlFor="chantierSuperificie">Nombre de m2</label>
                     <OutlinedInput
                         id="chantierSuperificie"
@@ -137,6 +136,8 @@ export default function AddNewChantier() {
                         </InputAdornment>}
                         label="chantierSuperificie"
                     />
+                </FormControl>
+                <FormControl variant={"standard"} fullWidth={true}>
                     <label htmlFor="numVoie">Numéro et nom de voie</label>
                     <OutlinedInput
                         id="numVoie"
@@ -146,6 +147,8 @@ export default function AddNewChantier() {
                         </InputAdornment>}
                         label="numVoie"
                     />
+                </FormControl>
+                    <FormControl variant={"standard"} fullWidth={true}>
                     <label htmlFor="nameVoie">Code postal</label>
                     <OutlinedInput
                         id="nameVoie"
@@ -155,6 +158,8 @@ export default function AddNewChantier() {
                         </InputAdornment>}
                         label="nameVoie"
                     />
+                    </FormControl>
+                <FormControl variant={"standard"} fullWidth={true}>
                     <label htmlFor="chantierCity">Ville</label>
                     <OutlinedInput
                         id="nameVoie"
@@ -164,6 +169,8 @@ export default function AddNewChantier() {
                         </InputAdornment>}
                         label="nameVoie"
                     />
+                </FormControl>
+                <FormControl variant={"standard"} fullWidth={true}>
                     <label htmlFor="chantierCountry">Pays</label>
                     <OutlinedInput
                         id="nameVoie"
@@ -173,6 +180,8 @@ export default function AddNewChantier() {
                         </InputAdornment>}
                         label="nameVoie"
                     />
+                </FormControl>
+                <FormControl variant={"standard"} fullWidth={true}>
                     {/*Ajouter un fichier Oui Non*/}
                     <FormLabel id="demo-controlled-radio-buttons-group">Ajouter un fichier au dossier (diagnostic PEMD,
                         plan d’architecte, etc)</FormLabel>
@@ -187,7 +196,6 @@ export default function AddNewChantier() {
                         <FormControlLabel value="Non" control={<Radio/>} label="Non"/>
                     </RadioGroup>
                 </FormControl>
-            </form>
         </div>
         <div className={styles.buttonAddNewChantier}>
             <Button variant="contained">Valider</Button>
