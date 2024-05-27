@@ -7,12 +7,11 @@ function Etage() {
             <p className="etage_categorie">Etages</p>
             <div className="info_etage">
                 <p>Vous n’avez pas encore</p>
-                <div className="info_etage2">
-                    <p>ajouté de plan.</p>
-                </div>
+                <p>ajouté de plan.</p>
             </div>
             <div className="button_etage">
-                <p>Ajouter un étage</p>
+                <p>Scanner un plan</p>
+                <a href="#"></a>
             </div>
         </>
     )

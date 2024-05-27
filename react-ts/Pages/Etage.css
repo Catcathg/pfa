@@ -8,13 +8,27 @@
 }
 
 .info_etage {
+    margin: 210px 0px 50px 0px;
+}
+
+.info_etage p{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.info_etage2 {
+.button_etage {
     display: flex;
     justify-content: center;
-    
+}
+
+.button_etage p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3D7CF5;
+    border-radius: 60px;
+    width: 218px;
+    height: 45px;
+    color: white;
 }
